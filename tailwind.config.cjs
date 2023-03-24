@@ -23,6 +23,9 @@ module.exports = {
       },
       boxShadow: {
         'custom': '0 20px 50px -18px rgba(100, 100, 100, 0.2)',
+      },
+      borderRadius: {
+        '4xl': '2rem',
       }
     },
   },

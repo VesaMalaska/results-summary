@@ -19,7 +19,9 @@ export default function AreaResultRow({ field, score }) {
             gap-3
             rounded-md
             p-4
-        `} style={{backgroundColor: 'rgba(' + colorRgb + ', 0.05)'}}>
+            sm:text-lg
+            sm:rounded-lg
+        `} style={{backgroundColor: 'rgba(' + colorRgb + ', 0.06)'}}>
             <div className="flex gap-3" style={{color: 'rgb(' + colorRgb + ')'}}>
                 <span className='text-xl'>@</span>
                 <span>{field}</span>

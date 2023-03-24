@@ -10,6 +10,11 @@ export default function Card() {
             flex 
             flex-col
             font-primary
+            sm:flex-row
+            sm:min-h-fit
+            sm:max-w-[46rem]
+            sm:overflow-hidden
+            sm:rounded-4xl
         ">
             <ResultsOverview />
             <ResultsStats />            

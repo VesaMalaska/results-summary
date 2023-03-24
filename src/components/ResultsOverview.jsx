@@ -32,8 +32,20 @@ export default function ResultsOverview() {
             gap-6
             rounded-b-3xl
             text-center
+            sm:w-1/2
+            sm:rounded-l-none
+            sm:rounded-r-4xl
+            sm:py-10
+            sm:px-8
+            sm:gap-8
         ">
-            <h2 className="text-lg leading-6 font-semibold text-light-lavender">Your Result</h2>
+            <h2 className="
+                text-lg 
+                leading-6 
+                font-semibold 
+                text-light-lavender
+                sm:text-2xl
+            ">Your Result</h2>
             <ResultsOverviewScore totalScore={totalScore} />
             <ResultText resultText={resultText} />
         </div>

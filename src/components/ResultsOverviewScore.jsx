@@ -13,9 +13,10 @@ export default function ResultsOverviewScore({ totalScore }) {
             rounded-full
             w-36
             aspect-square
+            sm:w-48
         ">
-            <div className="text-6xl text-white font-extrabold">{totalScore}</div>
-            <div className="text-md text-light-lavender opacity-60">of 100</div>
+            <div className="text-6xl text-white font-extrabold sm:text-7xl">{totalScore}</div>
+            <div className="text-md text-light-lavender opacity-60 sm:text-lg">of 100</div>
         </div>
     );
 }
