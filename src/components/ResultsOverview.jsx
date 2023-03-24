@@ -1,7 +1,23 @@
 import ResultsOverviewScore from "./ResultsOverviewScore";
 import ResultText from "./ResultText";
+import { resultData, resultTexts, scoreRatings } from "../utils/resultData";
 
 export default function ResultsOverview() {
+
+    const totalScoreSum = resultData.reduce((total, current) => {
+        return total + current.score; 
+    }, 0);
+
+    const totalScore = Math.round(totalScoreSum / 4);
+
+    const scoreRating = scoreRatings.find(rating => {
+        return totalScore < rating.max && totalScore > rating.min;
+    });
+
+    const resultText = resultTexts.find(resultSet => {
+        return resultSet.title === scoreRating.rating;
+    });
+
     return (
         <div className="
             w-full
@@ -18,8 +34,8 @@ export default function ResultsOverview() {
             text-center
         ">
             <h2 className="text-lg leading-6 font-semibold text-light-lavender">Your Result</h2>
-            <ResultsOverviewScore />
-            <ResultText />
+            <ResultsOverviewScore totalScore={totalScore} />
+            <ResultText resultText={resultText} />
         </div>
     );
 }
