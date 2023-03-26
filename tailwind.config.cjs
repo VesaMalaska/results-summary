@@ -22,7 +22,7 @@ module.exports = {
         'bodytext': '#4c5e77',
       },
       boxShadow: {
-        'custom': '0 20px 50px -18px rgba(100, 100, 100, 0.2)',
+        'custom': '20px 30px 90px -10px hsla(256, 60%, 60%, 0.15)',
       },
       borderRadius: {
         '4xl': '2rem',

@@ -15,6 +15,7 @@ export default function Card() {
             sm:max-w-[46rem]
             sm:overflow-hidden
             sm:rounded-4xl
+            sm:shadow-custom
         ">
             <ResultsOverview />
             <ResultsStats />            
