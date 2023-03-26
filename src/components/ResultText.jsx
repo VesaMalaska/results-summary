@@ -1,6 +1,6 @@
 export default function ResultText({ resultText }) {
     return (
-        <div className="px-5">
+        <div className="px-8">
             <h3 className="text-white text-2xl leading-6 font-bold sm:text-4xl">
                 {resultText.title}
             </h3>
