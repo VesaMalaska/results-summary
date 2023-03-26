@@ -1,18 +1,11 @@
 import ResultRowIcon from "./ResultRowIcon";
+import { resultAreaColors } from "../utils/themeConfig";
 
 export default function AreaResultRow({ field, score }) {
 
-    let colorRgb = '';
-    
-    if (field === 'Reaction') {
-        colorRgb = '245, 90, 90';
-    } else if (field === 'Verbal') {
-        colorRgb = '80, 175, 140';
-    } else if (field === 'Visual') {
-        colorRgb = '70, 50, 205';
-    } else if (field === 'Memory') {
-        colorRgb = '225, 185, 30';
-    }
+    const { rgbValue } = resultAreaColors.find((colorData) => {
+        return colorData.resultArea === field;
+    });
 
     return (
         <div className={`
@@ -25,8 +18,8 @@ export default function AreaResultRow({ field, score }) {
             font-bold
             sm:text-lg
             sm:rounded-lg
-        `} style={{backgroundColor: 'rgba(' + colorRgb + ', 0.06)'}}>
-            <div className="flex gap-3 items-center" style={{color: 'rgb(' + colorRgb + ')'}}>
+        `} style={{backgroundColor: 'rgba(' + rgbValue + ', 0.06)'}}>
+            <div className="flex gap-3 items-center" style={{color: 'rgb(' + rgbValue + ')'}}>
                 <span className='text-lg'>
                     <ResultRowIcon field={field} />
                 </span>
