@@ -86,11 +86,7 @@ export default function ResultsOverview() {
                 <ResultText resultText={resultText} />
             </motion.div>
             <motion.div 
-<<<<<<< HEAD
                 className="absolute -bottom-full w-full h-full bg-white opacity-10"
-=======
-                className="absolute -bottom-full w-full h-full bg-white opacity-20"
->>>>>>> c9f7901273ba047ae71602e3232cd348478e2457
                 animate={animationControls}
                 transition={{ type: 'tween', ease: 'easeOut', delay: 0.4, duration: 0.7}} 
             ></motion.div>
