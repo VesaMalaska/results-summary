@@ -1,9 +1,12 @@
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import ResultsOverviewScore from "./ResultsOverviewScore";
 import ResultText from "./ResultText";
 import { resultData, resultTexts, scoreRatings } from "../utils/resultData";
 
 export default function ResultsOverview() {
+
+    const animationControls = useAnimation();
 
     const totalScoreSum = resultData.reduce((total, current) => {
         return total + current.score; 
@@ -18,6 +21,30 @@ export default function ResultsOverview() {
     const resultText = resultTexts.find(resultSet => {
         return resultSet.title === scoreRating.rating;
     });
+
+    const runLoaderAnimation = async () => {
+        await animationControls.set({ x: '-' + 95 + '%' });
+        await animationControls.start({ y: '-' + totalScore + '%' });
+        await animationControls.start({
+            opacity: 0.5,
+            transition: {
+                delay: 0.25,
+                duration: 0.01
+            }
+        });
+        await animationControls.set({ x: 0, y: '-' + 100 + '%' });
+        await animationControls.start({ 
+            opacity: 0,
+            transition: {
+                ease: "easeOut",
+                duration: 0.7,
+            }
+         });
+    }
+
+    useEffect(() => {
+        runLoaderAnimation();
+    }, []);
 
     return (
         <div 
@@ -35,6 +62,7 @@ export default function ResultsOverview() {
                 gap-6
                 rounded-b-3xl
                 text-center
+                overflow-hidden
                 sm:w-1/2
                 sm:rounded-l-none
                 sm:rounded-r-4xl
@@ -54,13 +82,13 @@ export default function ResultsOverview() {
             <motion.div
                 initial={{ opacity: 0, y: 300 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ type: 'spring', stiffness: 190, mass: 0.5, delay: 1.2 }}
+                transition={{ type: 'spring', stiffness: 190, mass: 0.5, delay: 1.3 }}
             >                
                 <ResultText resultText={resultText} />
             </motion.div>
             <motion.div 
                 className="absolute -bottom-full w-full h-full bg-white opacity-20"
-                animate={{ y: '-' + totalScore + '%' }}
+                animate={animationControls}
                 transition={{ type: 'tween', ease: 'easeOut', delay: 0.4, duration: 0.7}} 
             ></motion.div>
         </div>

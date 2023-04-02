@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { animate } from "framer-motion"
+import { animate } from "framer-motion";
 
 export default function ResultsOverviewScore({ totalScore }) {
 
