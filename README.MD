@@ -1,6 +1,6 @@
 # Results summary - React Component
 
-This is a React Single Page App created with [Vite](https://vitejs.dev/). Styling is handled using [Tailwind CSS](https://tailwindcss.com/) and some animations added using [Framer Motion animation library](https://www.framer.com/motion/). This project is show casing a result summary component to be used in web app.
+This is a React Single Page App created with [Vite](https://vitejs.dev/). Styling is handled using [Tailwind CSS](https://tailwindcss.com/) and animations added using [Framer Motion animation library](https://www.framer.com/motion/) to give it a smooth and finalized feel. This project is show casing a result summary component to be used in web app.
 
 ## Frontend Mentor challenges
 
