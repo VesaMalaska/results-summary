@@ -4,7 +4,7 @@ This is a React Single Page App created with [Vite](https://vitejs.dev/). Stylin
 
 ## Frontend Mentor challenges
 
-This is my implementation for [Frontend Mentor's](https://www.frontendmentor.io/) `"Results summary component"` challenge. Frontend Mentor challenges are a great way to improve your Frontend skills.
+This is my implementation for [Frontend Mentor's](https://www.frontendmentor.io/) **"Results summary component"** challenge. Frontend Mentor challenges are a great way to improve your Frontend skills.
 
 ## Live demo
 
